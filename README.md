@@ -4,7 +4,7 @@ Una aplicación móvil desarrollada con **Ionic + Angular** que consume la [Pok�
 
 ---
 
-## 🤔 ¿Cómo funciona la app?
+##  ¿Cómo funciona la app?
 
 La app se conecta a **PokéAPI**, una API pública y gratuita que tiene información de todos los Pokémon de la saga. No necesita registro ni contraseña — simplemente hace peticiones HTTP y recibe los datos en formato JSON.
 
@@ -167,4 +167,4 @@ Este proyecto fue desarrollado con fines educativos para el curso de **Aplicacio
 
 ---
 
-*Desarrollado con ❤️ usando Ionic + Angular + PokéAPI*
+*Desarrollado usando Ionic + Angular + PokéAPI*
