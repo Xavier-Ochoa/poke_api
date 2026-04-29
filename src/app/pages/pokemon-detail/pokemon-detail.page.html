@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/pokemon-list"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ pokemon?.name | titlecase }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!loading && !error && pokemon">
+
+  <!-- Foto y nombre -->
+  <div style="text-align:center; padding: 24px 16px 8px;">
+    <img 
+      [src]="pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default"
+      [alt]="pokemon.name"
+      style="width: 180px; height: 180px; object-fit: contain;">
+    <h2 style="margin: 8px 0 4px; font-weight: 700; font-size: 24px;">
+      {{ pokemon.name | titlecase }}
+    </h2>
+    <p style="color: var(--ion-color-medium); margin: 0;">{{ formatId(pokemon.id) }}</p>
+  </div>
+
+  <!-- Tipos -->
+  <div style="display:flex; justify-content:center; gap:8px; margin-bottom: 16px;">
+    <ion-badge 
+      *ngFor="let t of pokemon.types" 
+      color="primary">
+      {{ t.type.name | titlecase }}
+    </ion-badge>
+  </div>
+
+  <!-- Medidas -->
+  <ion-list inset="true">
+    <ion-list-header><ion-label>Información general</ion-label></ion-list-header>
+    <ion-item>
+      <ion-label>Altura</ion-label>
+      <ion-note slot="end">{{ pokemon.height / 10 }} m</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Peso</ion-label>
+      <ion-note slot="end">{{ pokemon.weight / 10 }} kg</ion-note>
+    </ion-item>
+    <ion-item>
+      <ion-label>Experiencia base</ion-label>
+      <ion-note slot="end">{{ pokemon.base_experience }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <!-- Estadísticas -->
+  <ion-list inset="true">
+    <ion-list-header><ion-label>Estadísticas base</ion-label></ion-list-header>
+    <ion-item *ngFor="let stat of pokemon.stats">
+      <ion-label>
+        <p>{{ stat.stat.name | titlecase }}</p>
+        <ion-progress-bar 
+          [value]="statPercent(stat.base_stat) / 100" 
+          color="danger">
+        </ion-progress-bar>
+      </ion-label>
+      <ion-note slot="end">{{ stat.base_stat }}</ion-note>
+    </ion-item>
+  </ion-list>
+
+  <!-- Habilidades -->
+  <ion-list inset="true">
+    <ion-list-header><ion-label>Habilidades</ion-label></ion-list-header>
+    <ion-item *ngFor="let a of pokemon.abilities">
+      <ion-label>{{ a.ability.name | titlecase }}</ion-label>
+      <ion-badge *ngIf="a.is_hidden" slot="end" color="medium">Oculta</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <!-- Movimientos (primeros 20) -->
+  <ion-list inset="true">
+    <ion-list-header><ion-label>Movimientos (primeros 20)</ion-label></ion-list-header>
+    <ion-item *ngFor="let m of pokemon.moves.slice(0, 20)">
+      <ion-label>{{ m.move.name | titlecase }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!-- Loading -->
+<ion-content *ngIf="loading" style="display:flex; align-items:center; justify-content:center;">
+  <ion-spinner style="display:block; margin: 80px auto;"></ion-spinner>
+</ion-content>
+
+<!-- Error -->
+<ion-content *ngIf="error">
+  <div style="text-align:center; padding: 60px 20px;">
+    <ion-icon name="alert-circle-outline" style="font-size: 48px; color: var(--ion-color-danger)"></ion-icon>
+    <p>No se pudo cargar el Pokémon.</p>
+  </div>
+</ion-content>
