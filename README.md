@@ -145,7 +145,19 @@ Documentación oficial: [https://pokeapi.co/docs/v2](https://pokeapi.co/docs/v2)
 
 ## 📸 Capturas de pantalla
 
-> *Próximamente*
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/dd7e009d-df62-4fb2-9ad0-179edbd03979" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/16e3637c-333e-416d-94e6-9fab3980acd5" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/624a0735-3985-42db-b9bf-cd6c9914e428" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/2513ab24-a354-45a2-91b8-d5499d47d146" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/9e4c4166-9340-45cc-930d-c85a94d1f9aa" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/6ef12495-cb22-4976-8cfe-1bef79a96a35" />
+
+<img width="720" height="1638" alt="image" src="https://github.com/user-attachments/assets/ddf97e70-0937-41e1-bc82-0355e5e0fdf6" />
 
 ---
 
