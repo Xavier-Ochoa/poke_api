@@ -1,4 +1,4 @@
-# 📱 PokeApp — Aplicación Móvil con PokéAPI
+#  PokeApp — Aplicación Móvil con PokéAPI
 
 Una aplicación móvil desarrollada con **Ionic + Angular** que consume la [PokéAPI](https://pokeapi.co/) para listar y consultar información detallada de Pokémon. Puede ejecutarse como app web o instalarse en Android como APK nativo gracias a **Capacitor**.
 
